@@ -1,18 +1,24 @@
 package com.picpay.desafio.android
 
+import android.content.Intent
 import androidx.lifecycle.Lifecycle
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.platform.app.InstrumentationRegistry
+import com.picpay.desafio.android.RecyclerViewMatchers.atPosition
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.RecordedRequest
+import org.junit.After
+import org.junit.Before
 import org.junit.Test
-
 
 class MainActivityTest {
 
@@ -31,8 +37,8 @@ class MainActivityTest {
         }
     }
 
-    @Test
-    fun shouldDisplayListItem() {
+    @Before
+    fun setup() {
         server.dispatcher = object : Dispatcher() {
             override fun dispatch(request: RecordedRequest): MockResponse {
                 return when (request.path) {
@@ -43,12 +49,33 @@ class MainActivityTest {
         }
 
         server.start(serverPort)
+    }
 
-        launchActivity<MainActivity>().apply {
-            // TODO("validate if list displays items returned by server")
-        }
-
+    @After
+    fun tearDown() {
         server.close()
+    }
+
+    @Test
+    fun shouldDisplayListItem() {
+        val intent =
+            Intent(ApplicationProvider.getApplicationContext(), MainActivity::class.java).apply {
+                putExtra(Const.Arguments.MOCK_URL, "http://${server.hostName}:${server.port}")
+            }
+        launchActivity<MainActivity>(intent).apply {
+            onView(withId(R.id.recyclerView))
+                .check(
+                    matches(
+                        atPosition(0, hasDescendant(withText("Eduardo Santos")))
+                    )
+                )
+            onView(withId(R.id.recyclerView))
+                .check(
+                    matches(
+                        atPosition(0, hasDescendant(withText("@eduardo.santos")))
+                    )
+                )
+        }
     }
 
     companion object {
