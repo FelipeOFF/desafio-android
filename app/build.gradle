@@ -10,51 +10,48 @@ android.defaultConfig.applicationId "com.picpay.desafio.android"
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation rootProject.ext.appDependencies.kotlin
 
-    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation rootProject.ext.appDependencies.coreKtx
 
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation rootProject.ext.appDependencies.appcompat
+    implementation rootProject.ext.appDependencies.constraintlayout
 
-    implementation "com.google.android.material:material:$material_version"
+    implementation rootProject.ext.appDependencies.material
 
-    implementation "org.koin:koin-core:$koin_version"
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation rootProject.ext.appDependencies.koin
+    implementation rootProject.ext.appDependencies.koinAndroid
+    implementation rootProject.ext.appDependencies.koinViewmodel
 
-    implementation "com.google.dagger:dagger:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation rootProject.ext.appDependencies.lifecycle
+    implementation rootProject.ext.appDependencies.lifecycleLivedata
+    implementation rootProject.ext.appDependencies.lifecycleRuntime
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation rootProject.ext.appDependencies.coroutines
+    implementation rootProject.ext.appDependencies.coroutinesAndroid
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    implementation rootProject.ext.appDependencies.rxjava
+    implementation rootProject.ext.appDependencies.rxandroid
 
-    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
-    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation rootProject.ext.appDependencies.gson
 
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation rootProject.ext.appDependencies.retrofit
+    implementation rootProject.ext.appDependencies.retrofitRxjava2
+    implementation rootProject.ext.appDependencies.retrofitGson
+    implementation rootProject.ext.appDependencies.okhttp
 
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
-    implementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    implementation rootProject.ext.appDependencies.picasso
+    implementation rootProject.ext.appDependencies.circleimageview
 
-    implementation "com.squareup.picasso:picasso:$picasso_version"
-    implementation "de.hdodenhof:circleimageview:$circleimageview_version"
+    testImplementation rootProject.ext.appDependenciesTest.junit
+    testImplementation rootProject.ext.appDependenciesTest.mockito
+    testImplementation rootProject.ext.appDependenciesTest.mockitoKotlin
+    testImplementation rootProject.ext.appDependenciesTest.coreTesting
+    testImplementation rootProject.ext.appDependenciesTest.koin
+    testImplementation rootProject.ext.appDependenciesTest.coroutinesTest
 
-    testImplementation "junit:junit:$junit_version"
-    testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"
-    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
-    testImplementation "org.koin:koin-test:$koin_version"
-
-    androidTestImplementation "androidx.test:runner:$test_runner_version"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
-    androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
+    androidTestImplementation rootProject.ext.appDependenciesAndroidTest.testRunner
+    androidTestImplementation rootProject.ext.appDependenciesAndroidTest.espresso
+    androidTestImplementation rootProject.ext.appDependenciesAndroidTest.coreKtxTest
+    androidTestImplementation rootProject.ext.appDependenciesAndroidTest.okhttpMockwebserver
 }

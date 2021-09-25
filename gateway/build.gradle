@@ -14,18 +14,17 @@ android.buildTypes.named("debug") {
 }
 
 dependencies {
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
-    implementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation rootProject.ext.appDependencies.retrofit
+    implementation rootProject.ext.appDependencies.retrofitRxjava2
+    implementation rootProject.ext.appDependencies.retrofitGson
+    implementation rootProject.ext.appDependencies.okhttp
+    implementation rootProject.ext.appDependencies.okhttpLogInterceptor
 
     implementation project(":util")
 
-    testImplementation "junit:junit:$junit_version"
-    testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"
-    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
-    testImplementation "org.koin:koin-test:$koin_version"
+    testImplementation rootProject.ext.appDependenciesTest.junit
+    testImplementation rootProject.ext.appDependenciesTest.mockito
+    testImplementation rootProject.ext.appDependenciesTest.mockitoKotlin
+    testImplementation rootProject.ext.appDependenciesTest.coreTesting
+    testImplementation rootProject.ext.appDependenciesTest.koin
 }

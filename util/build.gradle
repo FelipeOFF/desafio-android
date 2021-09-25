@@ -6,6 +6,6 @@ plugins {
 apply from: '../baseConfigGradle/baseConfig.gradle'
 
 dependencies {
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation rootProject.ext.appDependencies.retrofit
+    implementation rootProject.ext.appDependencies.okhttp
 }

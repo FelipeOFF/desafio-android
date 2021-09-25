@@ -1,0 +1,80 @@
+ext {
+    minVersion = 21
+    targetVersion = 29
+    compileVersion = 29
+    projectBuildToolsVersion = '29.0.3'
+    appVersionCode = 1
+    appVersionName = "1.0"
+
+    dependenciesVersions = [
+            "kotlinVersion"          : '1.4.10',
+            "appcompatVersion"       : '1.3.1',
+            "coreKtxVersion"         : '1.6.0',
+            "coreTestingVersion"     : '2.1.0',
+            "constraintlayoutVersion": '2.1.0',
+            "materialVersion"        : '1.4.0',
+            "retrofitVersion"        : '2.9.0',
+            "okhttpVersion"          : '4.9.0',
+            "picassoVersion"         : '2.71828',
+            "circleimageviewVersion" : '3.1.0',
+            "junitVersion"           : '4.13.2',
+            "mockitoVersion"         : '3.5.13',
+            "mockitoKotlinVersion"   : '2.2.0',
+            "testRunnerVersion"      : '1.4.0',
+            "espressoVersion"        : '3.4.0',
+            "koinVersion"            : "2.0.1",
+            "daggerVersion"          : "2.23.2",
+            "lifecycleVersion"       : '2.3.1',
+            "coroutinesVersion"      : "1.5.0",
+            "rxjavaVersion"          : "2.2.17",
+            "rxandroidVersion"       : "2.1.1",
+            "gsonVersion"            : "2.8.6",
+            "coreKtxTestVersion"     : '1.4.0',
+    ]
+
+    pluginDependencies = [
+            "kotlinPlugin": "org.jetbrains.kotlin:kotlin-gradle-plugin${dependenciesVersions.kotlinVersion}",
+    ]
+
+    appDependencies = [
+            "kotlin"              : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${dependenciesVersions.kotlinVersion}",
+            "coreKtx"             : "androidx.core:core-ktx:${dependenciesVersions.coreKtxVersion}",
+            "appcompat"           : "androidx.appcompat:appcompat:${dependenciesVersions.appcompatVersion}",
+            "constraintlayout"    : "androidx.constraintlayout:constraintlayout:${dependenciesVersions.constraintlayoutVersion}",
+            "material"            : "com.google.android.material:material:${dependenciesVersions.materialVersion}",
+            "koin"                : "org.koin:koin-core:${dependenciesVersions.koinVersion}",
+            "koinAndroid"         : "org.koin:koin-android:${dependenciesVersions.koinVersion}",
+            "koinViewmodel"       : "org.koin:koin-androidx-viewmodel:${dependenciesVersions.koinVersion}",
+            "lifecycle"           : "androidx.lifecycle:lifecycle-viewmodel-ktx:${dependenciesVersions.lifecycleVersion}",
+            "lifecycleLivedata"   : "androidx.lifecycle:lifecycle-livedata-ktx:${dependenciesVersions.lifecycleVersion}",
+            "lifecycleRuntime"    : "androidx.lifecycle:lifecycle-runtime-ktx:${dependenciesVersions.lifecycleVersion}",
+            "coroutines"          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${dependenciesVersions.coroutinesVersion}",
+            "coroutinesAndroid"   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${dependenciesVersions.coroutinesVersion}",
+            "rxjava"              : "io.reactivex.rxjava2:rxjava:${dependenciesVersions.rxjavaVersion}",
+            "rxandroid"           : "io.reactivex.rxjava2:rxandroid:${dependenciesVersions.rxandroidVersion}",
+            "gson"                : "com.google.code.gson:gson:${dependenciesVersions.gsonVersion}",
+            "retrofit"            : "com.squareup.retrofit2:retrofit:${dependenciesVersions.retrofitVersion}",
+            "retrofitRxjava2"     : "com.squareup.retrofit2:adapter-rxjava2:${dependenciesVersions.retrofitVersion}",
+            "retrofitGson"        : "com.squareup.retrofit2:converter-gson:${dependenciesVersions.retrofitVersion}",
+            "okhttp"              : "com.squareup.okhttp3:okhttp:${dependenciesVersions.okhttpVersion}",
+            "picasso"             : "com.squareup.picasso:picasso:${dependenciesVersions.picassoVersion}",
+            "circleimageview"     : "de.hdodenhof:circleimageview:${dependenciesVersions.circleimageviewVersion}",
+            "okhttpLogInterceptor": "com.squareup.okhttp3:logging-interceptor${dependenciesVersions.okhttpVersion}",
+    ]
+
+    appDependenciesTest = [
+            "junit"         : "junit:junit:${dependenciesVersions.junitVersion}",
+            "mockito"       : "org.mockito:mockito-core:${dependenciesVersions.mockitoVersion}",
+            "mockitoKotlin" : "com.nhaarman.mockitokotlin2:mockito-kotlin:${dependenciesVersions.mockitoKotlinVersion}",
+            "coreTesting"   : "androidx.arch.core:core-testing:${dependenciesVersions.coreTestingVersion}",
+            "koin"          : "org.koin:koin-test:${dependenciesVersions.koinVersion}",
+            "coroutinesTest": "org.jetbrains.kotlinx:kotlinx-coroutines-test:${dependenciesVersions.coroutinesVersion}"
+    ]
+
+    appDependenciesAndroidTest = [
+            "testRunner"         : "androidx.test:runner:${dependenciesVersions.testRunnerVersion}",
+            "espresso"           : "androidx.test.espresso:espresso-core:${dependenciesVersions.espressoVersion}",
+            "coreKtxTest"        : "androidx.test:core-ktx:${dependenciesVersions.coreKtxTestVersion}",
+            "okhttpMockwebserver": "com.squareup.okhttp3:mockwebserver:${dependenciesVersions.okhttpVersion}",
+    ]
+}
