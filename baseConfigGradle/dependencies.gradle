@@ -22,7 +22,7 @@ ext {
             "mockitoKotlinVersion"   : '2.2.0',
             "testRunnerVersion"      : '1.4.0',
             "espressoVersion"        : '3.4.0',
-            "koinVersion"            : "2.0.1",
+            "koinVersion"            : "2.2.0",
             "daggerVersion"          : "2.23.2",
             "lifecycleVersion"       : '2.3.1',
             "coroutinesVersion"      : "1.5.0",
@@ -65,6 +65,7 @@ ext {
     appDependenciesTest = [
             "junit"         : "junit:junit:${dependenciesVersions.junitVersion}",
             "mockito"       : "org.mockito:mockito-core:${dependenciesVersions.mockitoVersion}",
+            "mockitoInline" : "org.mockito:mockito-inline:${dependenciesVersions.mockitoVersion}",
             "mockitoKotlin" : "com.nhaarman.mockitokotlin2:mockito-kotlin:${dependenciesVersions.mockitoKotlinVersion}",
             "coreTesting"   : "androidx.arch.core:core-testing:${dependenciesVersions.coreTestingVersion}",
             "koin"          : "org.koin:koin-test:${dependenciesVersions.koinVersion}",
