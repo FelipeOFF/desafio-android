@@ -12,6 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.platform.app.InstrumentationRegistry
 import com.picpay.desafio.android.RecyclerViewMatchers.atPosition
+import com.picpay.desafio.android.RecyclerViewMatchers.checkRecyclerViewItem
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -63,18 +64,8 @@ class MainActivityTest {
                 putExtra(Const.Arguments.MOCK_URL, "http://${server.hostName}:${server.port}")
             }
         launchActivity<MainActivity>(intent).apply {
-            onView(withId(R.id.recyclerView))
-                .check(
-                    matches(
-                        atPosition(0, hasDescendant(withText("Eduardo Santos")))
-                    )
-                )
-            onView(withId(R.id.recyclerView))
-                .check(
-                    matches(
-                        atPosition(0, hasDescendant(withText("@eduardo.santos")))
-                    )
-                )
+            checkRecyclerViewItem(R.id.recyclerView, 0, withText("@eduardo.santos"))
+            checkRecyclerViewItem(R.id.recyclerView, 0, withText("Eduardo Santos"))
         }
     }
 
