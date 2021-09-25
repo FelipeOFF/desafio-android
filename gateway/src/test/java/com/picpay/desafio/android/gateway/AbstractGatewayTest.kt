@@ -43,7 +43,6 @@ class AbstractGatewayTest {
     @Test
     fun `when calling getRetrofit and the retrofit instance is created along with OKHttpClient with http log`() {
         // Given
-        val urls = URLs.URL_PROD
         val abstractGateway = spy(AbstractGatewayClientMock(
             urls = urls,
             httpClientBuilder = httpClientBuilder,
