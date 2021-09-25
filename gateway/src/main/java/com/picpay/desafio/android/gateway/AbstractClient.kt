@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-abstract class AbstractGateway {
+abstract class AbstractClient {
 
     protected abstract val urls: URLs
 

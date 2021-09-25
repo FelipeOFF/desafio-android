@@ -43,6 +43,9 @@ dependencies {
     implementation rootProject.ext.appDependencies.picasso
     implementation rootProject.ext.appDependencies.circleimageview
 
+    implementation project(":gateway")
+    implementation project(":model")
+
     testImplementation rootProject.ext.appDependenciesTest.junit
     testImplementation rootProject.ext.appDependenciesTest.mockito
     testImplementation rootProject.ext.appDependenciesTest.mockitoKotlin

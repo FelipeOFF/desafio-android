@@ -59,7 +59,7 @@ ext {
             "okhttp"              : "com.squareup.okhttp3:okhttp:${dependenciesVersions.okhttpVersion}",
             "picasso"             : "com.squareup.picasso:picasso:${dependenciesVersions.picassoVersion}",
             "circleimageview"     : "de.hdodenhof:circleimageview:${dependenciesVersions.circleimageviewVersion}",
-            "okhttpLogInterceptor": "com.squareup.okhttp3:logging-interceptor${dependenciesVersions.okhttpVersion}",
+            "okhttpLogInterceptor": "com.squareup.okhttp3:logging-interceptor:${dependenciesVersions.okhttpVersion}",
     ]
 
     appDependenciesTest = [

@@ -21,6 +21,7 @@ dependencies {
     implementation rootProject.ext.appDependencies.okhttpLogInterceptor
 
     implementation project(":util")
+    implementation project(":model")
 
     testImplementation rootProject.ext.appDependenciesTest.junit
     testImplementation rootProject.ext.appDependenciesTest.mockito

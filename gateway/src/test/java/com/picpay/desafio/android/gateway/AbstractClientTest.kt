@@ -7,7 +7,7 @@ import com.nhaarman.mockitokotlin2.spy
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
-import com.picpay.desafio.android.gateway.mock.AbstractGatewayClientMock
+import com.picpay.desafio.android.gateway.mock.AbstractClientClientMock
 import junit.framework.TestCase.assertEquals
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -17,7 +17,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class AbstractGatewayTest {
+class AbstractClientTest {
 
     private val httpClientBuilder: OkHttpClient.Builder = mock()
     private val retrofitClientBuilder: Retrofit.Builder = mock()
@@ -30,9 +30,9 @@ class AbstractGatewayTest {
     fun setup() {
         // When defaults
         whenever(httpClientBuilder.addInterceptor(httpLoggingInterceptor)).doReturn(httpClientBuilder)
-        whenever(httpClientBuilder.connectTimeout(AbstractGateway.OKHTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS)).doReturn(httpClientBuilder)
-        whenever(httpClientBuilder.readTimeout(AbstractGateway.OKHTTP_READ_TIMEOUT, TimeUnit.SECONDS)).doReturn(httpClientBuilder)
-        whenever(httpClientBuilder.writeTimeout(AbstractGateway.OKHTTP_WRITE_TIMEOUT, TimeUnit.SECONDS)).doReturn(httpClientBuilder)
+        whenever(httpClientBuilder.connectTimeout(AbstractClient.OKHTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS)).doReturn(httpClientBuilder)
+        whenever(httpClientBuilder.readTimeout(AbstractClient.OKHTTP_READ_TIMEOUT, TimeUnit.SECONDS)).doReturn(httpClientBuilder)
+        whenever(httpClientBuilder.writeTimeout(AbstractClient.OKHTTP_WRITE_TIMEOUT, TimeUnit.SECONDS)).doReturn(httpClientBuilder)
         whenever(httpClientBuilder.build()).doReturn(okHttpClientMock)
         whenever(retrofitClientBuilder.client(okHttpClientMock)).doReturn(retrofitClientBuilder)
         whenever(retrofitClientBuilder.baseUrl(urls.url)).doReturn(retrofitClientBuilder)
@@ -43,7 +43,7 @@ class AbstractGatewayTest {
     @Test
     fun `when calling getRetrofit and the retrofit instance is created along with OKHttpClient with http log`() {
         // Given
-        val abstractGateway = spy(AbstractGatewayClientMock(
+        val abstractGateway = spy(AbstractClientClientMock(
             urls = urls,
             httpClientBuilder = httpClientBuilder,
             retrofitClientBuilder = retrofitClientBuilder,
@@ -62,9 +62,9 @@ class AbstractGatewayTest {
         // Verify
         verify(httpLoggingInterceptor, times(1)).setLevel(HttpLoggingInterceptor.Level.BODY)
         verify(httpClientBuilder, times(1)).addInterceptor(httpLoggingInterceptor)
-        verify(httpClientBuilder, times(1)).connectTimeout(AbstractGateway.OKHTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS)
-        verify(httpClientBuilder, times(1)).readTimeout(AbstractGateway.OKHTTP_READ_TIMEOUT, TimeUnit.SECONDS)
-        verify(httpClientBuilder, times(1)).writeTimeout(AbstractGateway.OKHTTP_WRITE_TIMEOUT, TimeUnit.SECONDS)
+        verify(httpClientBuilder, times(1)).connectTimeout(AbstractClient.OKHTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS)
+        verify(httpClientBuilder, times(1)).readTimeout(AbstractClient.OKHTTP_READ_TIMEOUT, TimeUnit.SECONDS)
+        verify(httpClientBuilder, times(1)).writeTimeout(AbstractClient.OKHTTP_WRITE_TIMEOUT, TimeUnit.SECONDS)
         verify(retrofitClientBuilder, times(1)).client(okHttpClientMock)
         verify(retrofitClientBuilder, times(1)).baseUrl(urls.url)
         verify(retrofitClientBuilder, times(1)).addConverterFactory(any())
@@ -74,7 +74,7 @@ class AbstractGatewayTest {
     @Test
     fun `when calling getRetrofit and the retrofit instance is created along with OKHttpClient without http log`() {
         // Given
-        val abstractGateway = spy(AbstractGatewayClientMock(
+        val abstractGateway = spy(AbstractClientClientMock(
             urls = urls,
             httpClientBuilder = httpClientBuilder,
             retrofitClientBuilder = retrofitClientBuilder,
@@ -93,9 +93,9 @@ class AbstractGatewayTest {
         // Verify
         verify(httpLoggingInterceptor, times(1)).setLevel(HttpLoggingInterceptor.Level.NONE)
         verify(httpClientBuilder, times(1)).addInterceptor(httpLoggingInterceptor)
-        verify(httpClientBuilder, times(1)).connectTimeout(AbstractGateway.OKHTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS)
-        verify(httpClientBuilder, times(1)).readTimeout(AbstractGateway.OKHTTP_READ_TIMEOUT, TimeUnit.SECONDS)
-        verify(httpClientBuilder, times(1)).writeTimeout(AbstractGateway.OKHTTP_WRITE_TIMEOUT, TimeUnit.SECONDS)
+        verify(httpClientBuilder, times(1)).connectTimeout(AbstractClient.OKHTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS)
+        verify(httpClientBuilder, times(1)).readTimeout(AbstractClient.OKHTTP_READ_TIMEOUT, TimeUnit.SECONDS)
+        verify(httpClientBuilder, times(1)).writeTimeout(AbstractClient.OKHTTP_WRITE_TIMEOUT, TimeUnit.SECONDS)
         verify(retrofitClientBuilder, times(1)).client(okHttpClientMock)
         verify(retrofitClientBuilder, times(1)).baseUrl(urls.url)
         verify(retrofitClientBuilder, times(1)).addConverterFactory(any())

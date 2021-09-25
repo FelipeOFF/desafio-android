@@ -61,7 +61,7 @@ class MainActivityTest {
     fun shouldDisplayListItem() {
         val intent =
             Intent(ApplicationProvider.getApplicationContext(), MainActivity::class.java).apply {
-                putExtra(Const.Arguments.MOCK_URL, "http://${server.hostName}:${server.port}")
+                putExtra(Const.Arguments.MOCK_URL, true)
             }
         launchActivity<MainActivity>(intent).apply {
             checkRecyclerViewItem(R.id.recyclerView, 0, withText("@eduardo.santos"))
