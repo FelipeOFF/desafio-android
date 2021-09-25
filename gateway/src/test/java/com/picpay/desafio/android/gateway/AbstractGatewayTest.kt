@@ -55,7 +55,6 @@ class AbstractGatewayTest {
         // When
         whenever(httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)).doReturn(httpLoggingInterceptor)
 
-        // When
         val retrofitLazy = abstractGateway.getRetrofit()
 
         // Then
@@ -87,7 +86,6 @@ class AbstractGatewayTest {
         // When
         whenever(httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE)).doReturn(httpLoggingInterceptor)
 
-        // When
         val retrofitLazy = abstractGateway.getRetrofit()
 
         // Then
