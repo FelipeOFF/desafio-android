@@ -1,13 +1,12 @@
 package com.picpay.desafio.android.gateway
 
+import com.picpay.desafio.android.util.OkHttpClientBuilder
+import com.picpay.desafio.android.util.RetrofitBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-
-typealias OkHttpClientBuilder = OkHttpClient.Builder.() -> OkHttpClient.Builder
-typealias RetrofitBuilder = Retrofit.Builder.() -> Retrofit.Builder
 
 abstract class AbstractGateway {
 

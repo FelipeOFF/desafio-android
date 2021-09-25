@@ -5,6 +5,8 @@ apply plugin: 'kotlin-kapt'
 
 apply from: '../baseConfigGradle/baseConfig.gradle'
 
+android.defaultConfig.applicationId "com.picpay.desafio.android"
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
