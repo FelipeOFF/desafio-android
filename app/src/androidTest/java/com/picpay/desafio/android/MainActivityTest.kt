@@ -1,6 +1,5 @@
 package com.picpay.desafio.android
 
-import android.content.Intent
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso.onView

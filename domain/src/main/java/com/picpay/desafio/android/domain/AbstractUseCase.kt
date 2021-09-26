@@ -1,7 +1,6 @@
 package com.picpay.desafio.android.domain
 
 import com.picpay.desafio.android.repository.cache.Cache
-import com.picpay.desafio.android.repository.cache.CoCache
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

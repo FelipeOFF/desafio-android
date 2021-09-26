@@ -1,7 +1,7 @@
 package com.picpay.desafio.android.di
 
-import com.picpay.desafio.android.di.gateway.gatewayModule
 import com.picpay.desafio.android.di.domain.domainModule
+import com.picpay.desafio.android.di.gateway.gatewayModule
 import com.picpay.desafio.android.di.repository.repositoryModule
 import org.koin.core.module.Module
 import org.koin.dsl.module

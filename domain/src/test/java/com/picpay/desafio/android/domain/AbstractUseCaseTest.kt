@@ -12,8 +12,8 @@ import com.picpay.desafio.android.repository.cache.Cache
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.toList
-import okhttp3.ResponseBody.Companion.toResponseBody
 import kotlinx.coroutines.runBlocking
+import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Test
 import org.mockito.ArgumentMatchers.anyBoolean
 import retrofit2.HttpException

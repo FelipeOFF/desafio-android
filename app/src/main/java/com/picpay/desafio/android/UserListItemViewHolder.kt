@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.model.users.res.User
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.list_item_user.view.*
+import kotlinx.android.synthetic.main.list_item_user.view.name
+import kotlinx.android.synthetic.main.list_item_user.view.picture
+import kotlinx.android.synthetic.main.list_item_user.view.progressBar
+import kotlinx.android.synthetic.main.list_item_user.view.username
 
 class UserListItemViewHolder(
     itemView: View
