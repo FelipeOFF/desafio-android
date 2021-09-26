@@ -60,7 +60,7 @@ class MainActivityTest {
     @Test
     fun shouldDisplayListItem() {
         launchActivity<MainActivity>().apply {
-            Thread.sleep(2000)
+            Thread.sleep(1000)
             checkRecyclerViewItem(R.id.recyclerView, 0, withText("@eduardo.santos"))
             checkRecyclerViewItem(R.id.recyclerView, 0, withText("Eduardo Santos"))
         }
