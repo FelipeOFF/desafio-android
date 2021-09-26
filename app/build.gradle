@@ -19,6 +19,9 @@ dependencies {
     implementation rootProject.ext.appDependencies.appcompat
     implementation rootProject.ext.appDependencies.constraintlayout
 
+    implementation rootProject.ext.appDependencies.coroutines
+    implementation rootProject.ext.appDependencies.coroutinesAndroid
+
     implementation rootProject.ext.appDependencies.material
 
     implementation rootProject.ext.appDependencies.koin
@@ -31,15 +34,13 @@ dependencies {
 
     implementation rootProject.ext.appDependencies.gson
 
-    implementation rootProject.ext.appDependencies.retrofit
-
     implementation rootProject.ext.appDependencies.picasso
     implementation rootProject.ext.appDependencies.circleimageview
 
     implementation rootProject.ext.appDependencies.timber
 
     implementation project(":di")
-    implementation project(":gateway")
+    implementation project(":domain")
     implementation project(":model")
 
     testImplementation rootProject.ext.appDependenciesTest.junit
