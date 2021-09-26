@@ -32,6 +32,7 @@ ext {
             "coreKtxTestVersion"     : '1.4.0',
             "hawkVersion"            : "2.0.1",
             "timber"                 : '4.7.1',
+            "recyclerviewVersion"    : '1.2.1',
     ]
 
     pluginDependencies = [
@@ -64,6 +65,7 @@ ext {
             "okhttpLogInterceptor": "com.squareup.okhttp3:logging-interceptor:${dependenciesVersions.okhttpVersion}",
             "hawk"                : "com.orhanobut:hawk:${dependenciesVersions.hawkVersion}",
             "timber"              : "com.jakewharton.timber:timber:${dependenciesVersions.timber}",
+            "recyclerview"        : "androidx.recyclerview:recyclerview:${dependenciesVersions.recyclerviewVersion}",
     ]
 
     appDependenciesTest = [
