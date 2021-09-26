@@ -8,4 +8,5 @@ apply from: '../baseConfigGradle/baseConfig.gradle'
 dependencies {
     implementation rootProject.ext.appDependencies.retrofit
     implementation rootProject.ext.appDependencies.okhttp
+    implementation rootProject.ext.appDependencies.datastore
 }

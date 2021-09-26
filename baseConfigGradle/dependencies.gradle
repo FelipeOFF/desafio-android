@@ -30,6 +30,7 @@ ext {
             "rxandroidVersion"       : "2.1.1",
             "gsonVersion"            : "2.8.6",
             "coreKtxTestVersion"     : '1.4.0',
+            "datastoreVersion"       : '1.0.0',
     ]
 
     pluginDependencies = [
@@ -60,6 +61,7 @@ ext {
             "picasso"             : "com.squareup.picasso:picasso:${dependenciesVersions.picassoVersion}",
             "circleimageview"     : "de.hdodenhof:circleimageview:${dependenciesVersions.circleimageviewVersion}",
             "okhttpLogInterceptor": "com.squareup.okhttp3:logging-interceptor:${dependenciesVersions.okhttpVersion}",
+            "datastore"           : "androidx.datastore:datastore:${dependenciesVersions.datastoreVersion}",
     ]
 
     appDependenciesTest = [
