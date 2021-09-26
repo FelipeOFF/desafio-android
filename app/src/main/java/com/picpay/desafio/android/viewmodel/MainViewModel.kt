@@ -2,7 +2,9 @@ package com.picpay.desafio.android.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.liveData
 import com.picpay.desafio.android.R
 import com.picpay.desafio.android.common.viewmodel.BaseViewModel
 import com.picpay.desafio.android.domain.ErrorWrapper
@@ -10,10 +12,22 @@ import com.picpay.desafio.android.domain.ResultWrapper
 import com.picpay.desafio.android.domain.user.GetUserUseCase
 import com.picpay.desafio.android.model.users.res.User
 import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.consumeEach
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class MainViewModel(userUserCase: GetUserUseCase) : BaseViewModel() {
+class MainViewModel(
+    private val userUserCase: GetUserUseCase
+) : BaseViewModel() {
 
-    private val userResultWrapper: LiveData<ResultWrapper<List<User>>> = userUserCase(Unit).asLiveData(Main)
+    private val commandsChannelUserResult = Channel<Boolean>()
+
+    private val userResultWrapper: LiveData<ResultWrapper<List<User>>> = liveData {
+        commandsChannelUserResult.consumeEach {
+            emitSource(userUserCase(Unit).asLiveData(Main))
+        }
+    }
 
     val showLoading: LiveData<Boolean> = MediatorLiveData<Boolean>().apply {
         addSource(userResultWrapper) { result ->
@@ -27,9 +41,20 @@ class MainViewModel(userUserCase: GetUserUseCase) : BaseViewModel() {
         }
     }
 
-    val showError: LiveData<Int> = MediatorLiveData<Int>().apply {
+    val showError: MutableLiveData<Int> = MediatorLiveData<Int>().apply {
         addSource(userResultWrapper) { result ->
             showErrorByResultWrapper(result)
+        }
+    }
+
+    init {
+        onClickInTryAgain()
+    }
+
+    fun onClickInTryAgain() {
+        launch {
+            showError.value = null
+            commandsChannelUserResult.send(true)
         }
     }
 

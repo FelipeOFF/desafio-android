@@ -32,8 +32,6 @@ dependencies {
     implementation rootProject.ext.appDependencies.lifecycleLivedata
     implementation rootProject.ext.appDependencies.lifecycleRuntime
 
-    implementation rootProject.ext.appDependencies.gson
-
     implementation rootProject.ext.appDependencies.circleimageview
 
     implementation rootProject.ext.appDependencies.timber

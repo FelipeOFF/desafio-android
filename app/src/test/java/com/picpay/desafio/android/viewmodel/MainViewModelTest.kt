@@ -155,7 +155,7 @@ class MainViewModelTest {
         mainViewModel.showError.observeForever(showErrorObserverMock)
 
         // Verify
-        verify(showErrorObserverMock, timeout(1000).times(1)).onChanged(null)
+        verify(showErrorObserverMock, timeout(1000).times(2)).onChanged(null)
         verify(showErrorObserverMock, timeout(1000).times(2)).onChanged(R.string.error)
     }
 
