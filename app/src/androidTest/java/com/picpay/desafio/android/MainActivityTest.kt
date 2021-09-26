@@ -8,6 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.platform.app.InstrumentationRegistry
 import com.picpay.desafio.android.RecyclerViewMatchers.checkRecyclerViewItem
+import com.picpay.desafio.android.activity.MainActivity
 import com.picpay.desafio.android.gateway.mock.PicPayMockWebServer
 import com.picpay.desafio.android.gateway.mock.PicPayMockWebServer.MOCK_SERVER_PORT
 import okhttp3.mockwebserver.Dispatcher
