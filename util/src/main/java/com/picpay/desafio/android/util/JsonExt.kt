@@ -22,27 +22,25 @@ inline fun <reified T : Any> String.fromJson(): T =
 inline fun <reified T : Any> Reader.fromJson(): T =
     checkNotNull(gson.fromJson(this, object : TypeToken<T>() {}.type))
 
+inline fun <reified T : Any> T.toJson(): String =
+    checkNotNull(gson.toJson(this))
+
 inline fun <reified T : Any> String.fromJsonOrNull(): T? =
     try {
         fromJson()
     } catch (ex: JsonParseException) {
-        Timber.i(this)
         Timber.e(ex)
         null
     } catch (ex: JsonSyntaxException) {
-        Timber.i(this)
         Timber.e(ex)
         null
     } catch (ex: IllegalStateException) {
-        Timber.i(this)
         Timber.e(ex)
         null
     } catch (ex: NullPointerException) {
-        Timber.i(this)
         Timber.e(ex)
         null
     } catch (ex: ClassCastException) {
-        Timber.i(this)
         Timber.e(ex)
         null
     }
@@ -50,6 +48,26 @@ inline fun <reified T : Any> String.fromJsonOrNull(): T? =
 inline fun <reified T : Any> Reader.fromJsonOrNull(): T? =
     try {
         fromJson()
+    } catch (ex: JsonParseException) {
+        Timber.e(ex)
+        null
+    } catch (ex: JsonSyntaxException) {
+        Timber.e(ex)
+        null
+    } catch (ex: IllegalStateException) {
+        Timber.e(ex)
+        null
+    } catch (ex: NullPointerException) {
+        Timber.e(ex)
+        null
+    } catch (ex: ClassCastException) {
+        Timber.e(ex)
+        null
+    }
+
+inline fun <reified T : Any> T.toJsonOrNull(): String? =
+    try {
+        toJson()
     } catch (ex: JsonParseException) {
         Timber.e(ex)
         null
