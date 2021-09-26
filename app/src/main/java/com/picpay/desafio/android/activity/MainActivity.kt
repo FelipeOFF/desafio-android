@@ -1,5 +1,6 @@
 package com.picpay.desafio.android.activity
 
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.picpay.desafio.android.BR
 import com.picpay.desafio.android.R
@@ -12,7 +13,8 @@ import kotlinx.coroutines.CoroutineScope
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.module.Module
 
-class MainActivity : BaseAcitivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main), CoroutineScope {
+class MainActivity : BaseAcitivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main),
+    CoroutineScope {
 
     override val bindingVariable: Int = BR.mainViewModel
     override val viewModel: MainViewModel by viewModel()

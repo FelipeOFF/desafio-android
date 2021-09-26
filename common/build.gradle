@@ -15,6 +15,7 @@ dependencies {
     implementation rootProject.ext.appDependencies.coroutinesAndroid
     implementation rootProject.ext.appDependencies.koin
     implementation rootProject.ext.appDependencies.koinAndroid
+    implementation rootProject.ext.appDependencies.picasso
 
     implementation rootProject.ext.appDependencies.lifecycle
     implementation rootProject.ext.appDependencies.lifecycleLivedata

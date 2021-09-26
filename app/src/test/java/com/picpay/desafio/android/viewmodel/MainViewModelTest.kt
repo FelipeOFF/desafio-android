@@ -2,10 +2,12 @@ package com.picpay.desafio.android.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
+import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.timeout
 import com.nhaarman.mockitokotlin2.verify
+import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.nhaarman.mockitokotlin2.whenever
 import com.picpay.desafio.android.R
 import com.picpay.desafio.android.domain.ErrorWrapper
@@ -25,6 +27,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
+import org.mockito.ArgumentMatchers.anyInt
 import java.net.UnknownHostException
 
 class MainViewModelTest {
@@ -109,6 +112,7 @@ class MainViewModelTest {
         val message = "Teste"
         val exception = UnknownHostException(message)
 
+        val showLoadingObserverMock: Observer<Boolean> = mock()
         val showErrorObserverMock: Observer<Int> = mock()
 
         // When
@@ -121,9 +125,14 @@ class MainViewModelTest {
         // Then
         val mainViewModel = MainViewModel(getUserUserCase)
         mainViewModel.showError.observeForever(showErrorObserverMock)
+        mainViewModel.showLoading.observeForever(showLoadingObserverMock)
 
         // Verify
-        verify(showErrorObserverMock, timeout(1000).times(1)).onChanged(R.string.error_connection)
+        verify(showErrorObserverMock, timeout(1000).times(1)).onChanged(null)
+        verify(showErrorObserverMock, timeout(1000).times(2)).onChanged(R.string.error_connection)
+
+        verify(showLoadingObserverMock, timeout(1000).times(1)).onChanged(true)
+        verify(showLoadingObserverMock, timeout(1000).times(2)).onChanged(false)
     }
 
     @Test
@@ -146,7 +155,8 @@ class MainViewModelTest {
         mainViewModel.showError.observeForever(showErrorObserverMock)
 
         // Verify
-        verify(showErrorObserverMock, timeout(1000).times(1)).onChanged(R.string.error)
+        verify(showErrorObserverMock, timeout(1000).times(1)).onChanged(null)
+        verify(showErrorObserverMock, timeout(1000).times(2)).onChanged(R.string.error)
     }
 
 }

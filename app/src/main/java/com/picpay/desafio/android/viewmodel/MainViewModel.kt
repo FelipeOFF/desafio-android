@@ -34,14 +34,16 @@ class MainViewModel(userUserCase: GetUserUseCase) : BaseViewModel() {
     }
 
     private fun MediatorLiveData<Int>.showErrorByResultWrapper(result: ResultWrapper<List<User>>?) {
-        value = if (result is ResultWrapper.Error) {
-            when (result.error) {
-                is ErrorWrapper.NetworkException -> R.string.error_connection
-                is ErrorWrapper.Server -> R.string.error
-                is ErrorWrapper.UnknownException -> R.string.error
+        value = when (result) {
+            is ResultWrapper.Success -> null
+            is ResultWrapper.Error -> {
+                when (result.error) {
+                    is ErrorWrapper.NetworkException -> R.string.error_connection
+                    is ErrorWrapper.Server -> R.string.error
+                    is ErrorWrapper.UnknownException -> R.string.error
+                }
             }
-        } else {
-            null
+            else -> value
         }
     }
 

@@ -34,7 +34,6 @@ dependencies {
 
     implementation rootProject.ext.appDependencies.gson
 
-    implementation rootProject.ext.appDependencies.picasso
     implementation rootProject.ext.appDependencies.circleimageview
 
     implementation rootProject.ext.appDependencies.timber
