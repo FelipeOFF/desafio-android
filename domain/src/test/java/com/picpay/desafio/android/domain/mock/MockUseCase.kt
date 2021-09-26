@@ -5,9 +5,15 @@ import kotlinx.coroutines.delay
 
 abstract class MockUseCase : AbstractUseCase<String, String>()
 
-class MockUseCaseImpl : MockUseCase() {
+class MockUseCaseImpl(
+    private val withThrowable: Throwable? = null
+) : MockUseCase() {
     override suspend fun execute(param: String): String {
-        delay(1000)
-        return param
+        if (withThrowable == null) {
+            delay(1000)
+            return param
+        } else {
+            throw withThrowable
+        }
     }
 }

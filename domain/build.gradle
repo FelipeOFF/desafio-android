@@ -7,7 +7,10 @@ apply from: '../baseConfigGradle/baseConfig.gradle'
 
 dependencies {
 
+    implementation rootProject.ext.appDependencies.retrofit
     implementation rootProject.ext.appDependencies.coroutines
+
+    implementation project(":repository")
 
     testImplementation rootProject.ext.appDependenciesTest.junit
     testImplementation rootProject.ext.appDependenciesTest.mockito
