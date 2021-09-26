@@ -6,8 +6,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.picpay.desafio.android.gateway.client.MockClient
-import com.picpay.desafio.android.gateway.client.PicPayClient
 import com.picpay.desafio.android.gateway.service.PicPayService
 import com.picpay.desafio.android.users.res.User
 import org.koin.android.ext.android.inject
