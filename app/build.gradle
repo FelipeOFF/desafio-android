@@ -41,11 +41,13 @@ dependencies {
 
     implementation project(":di")
     implementation project(":domain")
+    implementation project(":common")
     implementation project(":model")
 
     testImplementation rootProject.ext.appDependenciesTest.junit
     testImplementation rootProject.ext.appDependenciesTest.mockito
     testImplementation rootProject.ext.appDependenciesTest.mockitoKotlin
+    testImplementation rootProject.ext.appDependenciesTest.mockitoInline
     testImplementation rootProject.ext.appDependenciesTest.coreTesting
     testImplementation rootProject.ext.appDependenciesTest.coroutinesTest
 
