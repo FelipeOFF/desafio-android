@@ -68,7 +68,6 @@ ext {
             "mockitoInline" : "org.mockito:mockito-inline:${dependenciesVersions.mockitoVersion}",
             "mockitoKotlin" : "com.nhaarman.mockitokotlin2:mockito-kotlin:${dependenciesVersions.mockitoKotlinVersion}",
             "coreTesting"   : "androidx.arch.core:core-testing:${dependenciesVersions.coreTestingVersion}",
-            "koin"          : "org.koin:koin-test:${dependenciesVersions.koinVersion}",
             "coroutinesTest": "org.jetbrains.kotlinx:kotlinx-coroutines-test:${dependenciesVersions.coroutinesVersion}"
     ]
 
@@ -76,6 +75,7 @@ ext {
             "testRunner"         : "androidx.test:runner:${dependenciesVersions.testRunnerVersion}",
             "espresso"           : "androidx.test.espresso:espresso-core:${dependenciesVersions.espressoVersion}",
             "coreKtxTest"        : "androidx.test:core-ktx:${dependenciesVersions.coreKtxTestVersion}",
+            "koin"               : "org.koin:koin-test:${dependenciesVersions.koinVersion}",
             "okhttpMockwebserver": "com.squareup.okhttp3:mockwebserver:${dependenciesVersions.okhttpVersion}",
     ]
 }

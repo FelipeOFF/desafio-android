@@ -10,6 +10,7 @@ import com.picpay.desafio.android.gateway.client.MockClient
 import com.picpay.desafio.android.gateway.client.PicPayClient
 import com.picpay.desafio.android.gateway.service.PicPayService
 import com.picpay.desafio.android.users.res.User
+import org.koin.android.ext.android.inject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,13 +21,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private lateinit var progressBar: ProgressBar
     private lateinit var adapter: UserListAdapter
 
-    private val service: PicPayService by lazy {
-        if (intent.getBooleanExtra(Const.Arguments.MOCK_URL, false)) {
-            MockClient().service
-        } else {
-            PicPayClient().service
-        }
-    }
+    private val service: PicPayService by inject()
 
     override fun onResume() {
         super.onResume()

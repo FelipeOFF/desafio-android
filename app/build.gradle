@@ -43,6 +43,7 @@ dependencies {
     implementation rootProject.ext.appDependencies.picasso
     implementation rootProject.ext.appDependencies.circleimageview
 
+    implementation project(":di")
     implementation project(":gateway")
     implementation project(":model")
 
@@ -50,11 +51,11 @@ dependencies {
     testImplementation rootProject.ext.appDependenciesTest.mockito
     testImplementation rootProject.ext.appDependenciesTest.mockitoKotlin
     testImplementation rootProject.ext.appDependenciesTest.coreTesting
-    testImplementation rootProject.ext.appDependenciesTest.koin
     testImplementation rootProject.ext.appDependenciesTest.coroutinesTest
 
     androidTestImplementation rootProject.ext.appDependenciesAndroidTest.testRunner
     androidTestImplementation rootProject.ext.appDependenciesAndroidTest.espresso
     androidTestImplementation rootProject.ext.appDependenciesAndroidTest.coreKtxTest
     androidTestImplementation rootProject.ext.appDependenciesAndroidTest.okhttpMockwebserver
+    androidTestImplementation rootProject.ext.appDependenciesAndroidTest.koin
 }

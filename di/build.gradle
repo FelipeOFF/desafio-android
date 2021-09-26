@@ -1,0 +1,14 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../baseConfigGradle/baseConfig.gradle'
+
+dependencies {
+    implementation rootProject.ext.appDependencies.koin
+    implementation rootProject.ext.appDependencies.koinAndroid
+    implementation rootProject.ext.appDependencies.koinViewmodel
+
+    implementation project(":gateway")
+}

@@ -8,7 +8,7 @@ android {
         versionCode appVersionCode
         versionName appVersionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.picpay.desafio.android.runner.MockPicPayDesafioRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 
