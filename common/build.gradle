@@ -1,12 +1,15 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 apply from: '../baseConfigGradle/baseConfig.gradle'
 
 dependencies {
 
+    implementation rootProject.ext.appDependencies.appcompat
     implementation rootProject.ext.appDependencies.coroutines
     implementation rootProject.ext.appDependencies.coroutinesAndroid
 
