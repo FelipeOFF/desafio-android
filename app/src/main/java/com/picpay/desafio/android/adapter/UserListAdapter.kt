@@ -5,21 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.R
+import com.picpay.desafio.android.common.adapter.AbstractAdapterItems
 import com.picpay.desafio.android.model.users.res.User
+import com.picpay.desafio.android.util.safeHeritage
 
-class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
+class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>(), AbstractAdapterItems {
 
-    var users = emptyList<User>()
-        set(value) {
-            val result = DiffUtil.calculateDiff(
-                UserListDiffCallback(
-                    field,
-                    value
-                )
-            )
-            result.dispatchUpdatesTo(this)
-            field = value
-        }
+    private val users: MutableList<User> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserListItemViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -33,4 +25,19 @@ class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
     }
 
     override fun getItemCount(): Int = users.size
+
+    override fun replaceItems(list: List<Any>) =
+        setItems(list.safeHeritage())
+
+    private fun setItems(listOfUsers: List<User>) {
+        val result = DiffUtil.calculateDiff(
+            UserListDiffCallback(
+                listOfUsers,
+                users
+            )
+        )
+        result.dispatchUpdatesTo(this)
+        users.clear()
+        users.addAll(listOfUsers)
+    }
 }

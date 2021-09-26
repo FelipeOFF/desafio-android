@@ -1,6 +1,5 @@
 package com.picpay.desafio.android.common.helper
 
-import android.opengl.Visibility
 import android.view.View
 import androidx.databinding.BindingAdapter
 
