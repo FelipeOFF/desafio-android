@@ -1,5 +1,7 @@
 package com.picpay.desafio.android.common.activity
 
+import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -8,6 +10,8 @@ import com.picpay.desafio.android.common.viewmodel.BaseViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import org.koin.core.context.loadKoinModules
+import org.koin.core.module.Module
 import kotlin.coroutines.CoroutineContext
 
 abstract class BaseAcitivity<VB : ViewDataBinding, VM : BaseViewModel>(
@@ -35,6 +39,22 @@ abstract class BaseAcitivity<VB : ViewDataBinding, VM : BaseViewModel>(
         binding.executePendingBindings()
         return binding
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        injectFeature()
+    }
+
+    open val modules: List<Module>? = null
+
+    private val loadFeature by lazy {
+        modules?.let { modulesList ->
+            loadKoinModules(modulesList)
+            modulesList
+        }
+    }
+
+    private fun injectFeature() = loadFeature
 
     override fun onDestroy() {
         super.onDestroy()

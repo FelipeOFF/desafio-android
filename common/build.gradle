@@ -10,8 +10,11 @@ apply from: '../baseConfigGradle/baseConfig.gradle'
 dependencies {
 
     implementation rootProject.ext.appDependencies.appcompat
+    implementation rootProject.ext.appDependencies.recyclerview
     implementation rootProject.ext.appDependencies.coroutines
     implementation rootProject.ext.appDependencies.coroutinesAndroid
+    implementation rootProject.ext.appDependencies.koin
+    implementation rootProject.ext.appDependencies.koinAndroid
 
     implementation rootProject.ext.appDependencies.lifecycle
     implementation rootProject.ext.appDependencies.lifecycleLivedata
