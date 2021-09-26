@@ -45,6 +45,8 @@ dependencies {
     implementation rootProject.ext.appDependencies.picasso
     implementation rootProject.ext.appDependencies.circleimageview
 
+    implementation rootProject.ext.appDependencies.timber
+
     implementation project(":di")
     implementation project(":gateway")
     implementation project(":model")
