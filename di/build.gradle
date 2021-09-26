@@ -11,4 +11,6 @@ dependencies {
     implementation rootProject.ext.appDependencies.koinViewmodel
 
     implementation project(":gateway")
+    implementation project(":repository")
+    implementation project(":domain")
 }
