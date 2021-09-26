@@ -12,6 +12,7 @@ dependencies {
     implementation rootProject.ext.appDependencies.koin
 
     implementation project(":repository")
+    implementation project(":model")
 
     testImplementation rootProject.ext.appDependenciesTest.junit
     testImplementation rootProject.ext.appDependenciesTest.mockito
