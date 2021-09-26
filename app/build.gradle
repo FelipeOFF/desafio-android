@@ -29,18 +29,9 @@ dependencies {
     implementation rootProject.ext.appDependencies.lifecycleLivedata
     implementation rootProject.ext.appDependencies.lifecycleRuntime
 
-    implementation rootProject.ext.appDependencies.coroutines
-    implementation rootProject.ext.appDependencies.coroutinesAndroid
-
-    implementation rootProject.ext.appDependencies.rxjava
-    implementation rootProject.ext.appDependencies.rxandroid
-
     implementation rootProject.ext.appDependencies.gson
 
     implementation rootProject.ext.appDependencies.retrofit
-    implementation rootProject.ext.appDependencies.retrofitRxjava2
-    implementation rootProject.ext.appDependencies.retrofitGson
-    implementation rootProject.ext.appDependencies.okhttp
 
     implementation rootProject.ext.appDependencies.picasso
     implementation rootProject.ext.appDependencies.circleimageview
