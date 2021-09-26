@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../baseConfigGradle/baseConfig.gradle'
+
+dependencies {
+
+    implementation rootProject.ext.appDependencies.coroutines
+
+    testImplementation rootProject.ext.appDependenciesTest.junit
+    testImplementation rootProject.ext.appDependenciesTest.mockito
+    testImplementation rootProject.ext.appDependenciesTest.mockitoInline
+    testImplementation rootProject.ext.appDependenciesTest.mockitoKotlin
+    testImplementation rootProject.ext.appDependenciesTest.coreTesting
+    testImplementation rootProject.ext.appDependenciesTest.coroutinesTest
+}
