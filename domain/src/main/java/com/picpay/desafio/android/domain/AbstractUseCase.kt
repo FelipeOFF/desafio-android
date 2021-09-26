@@ -11,6 +11,7 @@ abstract class AbstractUseCase<in PARAMETER, out RESULT> {
         emit(ResultWrapper.Loading)
         try {
             val result = execute(value)
+            emit(ResultWrapper.Success(result))
         } finally {
             emit(ResultWrapper.DismissLoading)
         }
