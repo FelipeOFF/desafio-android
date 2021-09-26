@@ -19,6 +19,8 @@ dependencies {
     implementation rootProject.ext.appDependencies.timber
     implementation rootProject.ext.appDependencies.koin
     implementation rootProject.ext.appDependencies.koinAndroid
+    implementation rootProject.ext.appDependencies.hawk
+    implementation rootProject.ext.appDependencies.coroutines
 
     implementation project(":gateway")
     implementation project(":model")
