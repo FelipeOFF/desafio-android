@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.gateway.service.PicPayService
-import com.picpay.desafio.android.users.res.User
+import com.picpay.desafio.android.model.users.res.User
 import org.koin.android.ext.android.inject
 import retrofit2.Call
 import retrofit2.Callback
