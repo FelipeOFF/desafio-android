@@ -5,12 +5,24 @@ plugins {
 
 apply from: '../baseConfigGradle/baseConfig.gradle'
 
+android.buildTypes.named("release") {
+    buildConfigField "Boolean", "ENABLE_CACHE_REQUEST", "true"
+}
+
+android.buildTypes.named("debug") {
+    buildConfigField "Boolean", "ENABLE_CACHE_REQUEST", "true"
+}
+
 dependencies {
 
     implementation rootProject.ext.appDependencies.retrofit
+    implementation rootProject.ext.appDependencies.timber
+    implementation rootProject.ext.appDependencies.koin
+    implementation rootProject.ext.appDependencies.koinAndroid
 
     implementation project(":gateway")
     implementation project(":model")
+    implementation project(":util")
 
     testImplementation rootProject.ext.appDependenciesTest.junit
     testImplementation rootProject.ext.appDependenciesTest.mockito

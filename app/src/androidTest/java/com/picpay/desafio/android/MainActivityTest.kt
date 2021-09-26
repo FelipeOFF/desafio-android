@@ -59,11 +59,7 @@ class MainActivityTest {
 
     @Test
     fun shouldDisplayListItem() {
-        val intent =
-            Intent(context, MainActivity::class.java).apply {
-                putExtra(com.picpay.desafio.android.util.Const.Arguments.MOCK_URL, true)
-            }
-        launchActivity<MainActivity>(intent).apply {
+        launchActivity<MainActivity>().apply {
             checkRecyclerViewItem(R.id.recyclerView, 0, withText("@eduardo.santos"))
             checkRecyclerViewItem(R.id.recyclerView, 0, withText("Eduardo Santos"))
         }

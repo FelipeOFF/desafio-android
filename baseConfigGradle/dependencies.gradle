@@ -30,7 +30,6 @@ ext {
             "rxandroidVersion"       : "2.1.1",
             "gsonVersion"            : "2.8.6",
             "coreKtxTestVersion"     : '1.4.0',
-            "datastoreVersion"       : '1.0.0',
             "timber"                 : '4.7.1',
     ]
 
@@ -62,8 +61,6 @@ ext {
             "picasso"             : "com.squareup.picasso:picasso:${dependenciesVersions.picassoVersion}",
             "circleimageview"     : "de.hdodenhof:circleimageview:${dependenciesVersions.circleimageviewVersion}",
             "okhttpLogInterceptor": "com.squareup.okhttp3:logging-interceptor:${dependenciesVersions.okhttpVersion}",
-            "datastore"           : "androidx.datastore:datastore:${dependenciesVersions.datastoreVersion}",
-            "datastorePreferences": "androidx.datastore:datastore-preferences:${dependenciesVersions.datastoreVersion}",
             "timber"              : "com.jakewharton.timber:timber:${dependenciesVersions.timber}",
     ]
 

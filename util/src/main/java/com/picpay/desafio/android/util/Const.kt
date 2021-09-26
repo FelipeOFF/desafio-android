@@ -1,7 +1,8 @@
 package com.picpay.desafio.android.util
 
 object Const {
-    object Store {
-        const val FILE_STORE = "picpay_store"
+    object LocaleConst {
+        const val LOCALE_PT = "pt"
+        const val LOCALE_COUNTRY_BR = "BR"
     }
 }
