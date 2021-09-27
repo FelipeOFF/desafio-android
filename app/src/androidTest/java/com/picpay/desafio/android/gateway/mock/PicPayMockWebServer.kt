@@ -13,6 +13,18 @@ object PicPayMockWebServer {
                     "name": "Eduardo Santos",
                     "img": "https://randomuser.me/api/portraits/men/9.jpg",
                     "username": "@eduardo.santos"
+                },
+                {
+                    "id": null,
+                    "name": null,
+                    "img": null,
+                    "username": null
+                },
+                {
+                    "id": 1002,
+                    "name": "Cezar",
+                    "img": " invalid url ",
+                    "username": "@cezar.oliveira"
                 }
             ]
         """.trimIndent()
