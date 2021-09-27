@@ -1,5 +1,7 @@
 # PicPay - Desafio Android
 
+<img src="https://img.shields.io/badge/kotlin-100%25-blue"> <img src="https://img.shields.io/badge/instrumental%20test-100%25-green"> <img src="https://img.shields.io/badge/-Unit%20Tests-green">
+
 <img src="https://github.com/mobilepicpay/desafio-android/blob/master/desafio-picpay.gif" width="300"/>
 
 Um dos desafios de qualquer time de desenvolvimento é lidar com código legado e no PicPay isso não é diferente. Um dos objetivos de trazer os melhores desenvolvedores do Brasil é atacar o problema. Para isso, essa etapa do processo consiste numa proposta de solução para o desafio abaixo e você pode escolher a melhor forma de resolvê-lo, de acordo com sua comodidade e disponibilidade de tempo:
@@ -18,3 +20,16 @@ Com o passar do tempo identificamos alguns problemas que impedem esse aplicativo
   - Por outro lado, testes unitários rodam em um ambiente de execução diferenciado e são menos fiéis ao dia-a-dia de nossos usuários, então testes instrumentados também são importantes.
 
 Boa sorte! =)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+## Libs adicionadas
+- [Hawk](https://github.com/orhanobut/hawk)
+  - Para compartilhamento statico e controle do SharedPreference.
+  - Também pode ser usado quaisquer outro meio de armazenamento.
+- [Timber](https://github.com/JakeWharton/timber)
+  - Usado para concentrar os logs, e possibilitar inclusive o envio deles para alguma lib terceira como o Firebase ou para uma API proprietária.
+
+## Libs removidas
+- Dagger
+  - Ja tinha o Koin, por conta disso achei por bem remover ele
