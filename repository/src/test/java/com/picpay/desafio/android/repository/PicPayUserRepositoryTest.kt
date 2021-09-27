@@ -22,7 +22,7 @@ class PicPayUserRepositoryTest {
 
     private val picPayService: PicPayService = mock()
 
-    lateinit var picPayUserRepository: PicPayUserRepository
+    private lateinit var picPayUserRepository: PicPayUserRepository
 
     @Before
     fun setup() {

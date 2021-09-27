@@ -6,7 +6,4 @@ object Const {
         const val LOCALE_COUNTRY_BR = "BR"
     }
 
-    object Caches {
-        const val USER_CACHE_KEY = "user_cache_key"
-    }
 }

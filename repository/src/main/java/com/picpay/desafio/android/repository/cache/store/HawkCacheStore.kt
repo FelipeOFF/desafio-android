@@ -18,7 +18,7 @@ class HawkCacheStore<T> constructor(
     override suspend fun get(key: String): T? {
         Timber.d("Get cache = $key")
         val value: T? = Hawk.get<T>(key)
-        val createAt = Hawk.get<Long>("${key}_$CREATE_AT", 0L)
+        val createAt = Hawk.get("${key}_$CREATE_AT", 0L)
         val deference = Calendar.getInstance(LOCAL_DEFAULT).time.time - (createAt ?: 0L)
         return if (deference < lifeTimeMs) {
             value
