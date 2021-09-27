@@ -288,8 +288,6 @@ obj/
 .idea/$CACHE_FILE$
 .idea/runConfigurations.xml
 .idea/codeStyles/Project.xml
-.idea/markdown-navigator.xml
-.idea/markdown-navigator-enh.xml
 
 # OS-specific files
 .DS_Store?
