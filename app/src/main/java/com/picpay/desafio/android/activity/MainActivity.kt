@@ -1,6 +1,5 @@
 package com.picpay.desafio.android.activity
 
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.picpay.desafio.android.BR
 import com.picpay.desafio.android.R
